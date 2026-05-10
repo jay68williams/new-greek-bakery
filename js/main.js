@@ -334,13 +334,11 @@
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
-      fetch('https://newgreek.fusioncreative.uk/api/audit-lead/', {
+      fetch('https://newgreek.fusioncreative.uk/api/bakery-signup/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: 'Bakery Signup',
           email: email,
-          goal: 'bakery_signup',
           source: 'newgreekbakery.co.uk'
         })
       })
