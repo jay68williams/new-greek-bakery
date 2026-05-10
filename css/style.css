@@ -22,7 +22,10 @@
   --text-light:     #666666;
   --text-faint:     #AAAAAA;
 
-  --gold:           #0D47A1;
+  --gold:           #C9A24E;
+  --gold-dark:      #A78338;
+  --gold-light:     #E0C078;
+  --gold-wash:      rgba(201,162,78,0.08);
 
   --font-display:   'Noto Serif Display', Georgia, serif;
   --font-body:      'Inter', -apple-system, sans-serif;
@@ -1399,3 +1402,103 @@ body.coming-soon .nav-mobile { display: none !important; }
   .blog-post-body { padding: 0 24px 80px; }
   .blog-post-cta { padding: 32px 24px; }
 }
+
+/* ============================================
+   GOLD ACCENTS (brand layer)
+   ============================================ */
+
+/* Brand mark (logo image) */
+.brand-mark {
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 32px;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px rgba(201,162,78,0.25), 0 0 0 1px rgba(201,162,78,0.15);
+}
+.brand-mark-sm {
+  width: 44px;
+  height: 44px;
+  margin: 0 12px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.nav-inner .brand-mark-sm {
+  flex-shrink: 0;
+}
+
+/* Hero badge - gold */
+.hero-badge {
+  background: var(--gold-wash);
+  color: var(--gold-dark);
+  border: 1px solid rgba(201,162,78,0.35);
+}
+
+/* Accent text (em.accent) - gold serif italic */
+.accent {
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* Section labels in gold */
+.section-label {
+  color: var(--gold-dark);
+}
+.section-label::before {
+  background: var(--gold);
+}
+
+/* Vertical decorative line in gold */
+.v-line {
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+
+/* Opening banner - gold tint */
+.opening-banner {
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+  color: #fff;
+}
+
+/* Menu preview tags */
+.menu-preview-tag {
+  background: var(--gold-wash);
+  color: var(--gold-dark);
+  border: 1px solid rgba(201,162,78,0.3);
+}
+
+/* Hero signup button - gold variant */
+.hero-signup .btn-blue {
+  background: var(--gold);
+  color: #fff;
+}
+.hero-signup .btn-blue:hover {
+  background: var(--gold-dark);
+}
+
+/* Find us blocks - subtle gold left border */
+.find-us-block {
+  border-left: 2px solid var(--gold);
+  padding-left: 20px;
+}
+
+/* Footer brand accent line */
+.footer-brand {
+  border-top: 1px solid rgba(201,162,78,0.4);
+  padding-top: 24px;
+}
+
+/* Blog post hero - gold meta accent */
+.blog-post-hero .blog-post-meta {
+  color: var(--gold-dark);
+}
+.blog-post-hero h1 em,
+.blog-post-body h2::before {
+  color: var(--gold);
+}
+
+/* Scroll progress - gold */
+.scroll-progress {
+  background: var(--gold);
+}
+

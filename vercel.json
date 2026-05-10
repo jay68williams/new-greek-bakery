@@ -1,3 +1,11 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/menu", "destination": "/", "permanent": false },
+    { "source": "/menu.html", "destination": "/", "permanent": false },
+    { "source": "/about", "destination": "/", "permanent": false },
+    { "source": "/about.html", "destination": "/", "permanent": false },
+    { "source": "/find-us", "destination": "/#find-us", "permanent": false },
+    { "source": "/find-us.html", "destination": "/#find-us", "permanent": false }
+  ]
 }

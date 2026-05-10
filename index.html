@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics (shared with newgreek.co.uk) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GKH24P0ZZD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GKH24P0ZZD');</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="New Greek Bakery. Authentic Greek pastries, coffee and baked goods in Jesmond, Newcastle. Bougatsa, baklava, freddo espresso and more. From the makers of New Greek.">
-  <meta name="keywords" content="Greek bakery Newcastle, Greek pastries Jesmond, bougatsa Newcastle, freddo espresso Newcastle, Greek coffee Jesmond, baklava Newcastle">
-  <title>New Greek Bakery | Authentic Greek Pastries &amp; Coffee, Jesmond Newcastle</title>
+  <meta name="description" content="New Greek Bakery, opening soon in Jesmond, Newcastle. Authentic Greek pastries, freshly baked bread, freddo espresso and proper Greek coffee. From the team behind New Greek.">
+  <meta name="keywords" content="Greek bakery Newcastle, Greek bakery Jesmond, bougatsa Newcastle, freddo espresso Newcastle, Greek pastries Newcastle, baklava Newcastle, spanakopita Newcastle, Greek coffee Newcastle">
+  <title>New Greek Bakery | Coming Soon to Jesmond Newcastle</title>
   <link rel="canonical" href="https://newgreekbakery.co.uk/">
-  <meta property="og:title" content="New Greek Bakery | Authentic Greek Pastries &amp; Coffee, Jesmond">
+  <meta property="og:title" content="New Greek Bakery | Coming Soon to Jesmond">
   <meta property="og:description" content="Authentic Greek pastries, bread and coffee in the heart of Jesmond. From the makers of New Greek.">
   <meta property="og:type" content="restaurant">
+  <meta property="og:image" content="https://newgreekbakery.co.uk/images/og-image.jpg">
+  <meta property="og:url" content="https://newgreekbakery.co.uk/">
 
-  <!-- Structured Data -->
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#C9A24E">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Bakery",
     "name": "New Greek Bakery",
     "url": "https://newgreekbakery.co.uk",
-    "description": "Authentic Greek bakery cafe in Jesmond, Newcastle. Fresh pastries, breads and Greek coffee made daily.",
+    "description": "Authentic Greek bakery cafe in Jesmond, Newcastle. Opening soon.",
     "servesCuisine": "Greek",
     "priceRange": "$$",
     "address": {
@@ -28,296 +40,180 @@
       "postalCode": "NE2 4RP",
       "addressCountry": "GB"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 54.9878,
-      "longitude": -1.6007
-    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 54.9878, "longitude": -1.6007 },
     "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "07:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Sunday",
-        "opens": "08:00",
-        "closes": "16:00"
-      }
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "16:00" }
     ],
-    "menu": "https://newgreekbakery.co.uk/menu",
-    "sameAs": [
-      "https://www.instagram.com/newgreek.ncl"
-    ]
+    "sameAs": ["https://www.instagram.com/newgreek.ncl", "https://newgreek.co.uk"]
   }
   </script>
 
-  <link rel="stylesheet" href="css/style.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=12">
 </head>
-<body>
+<body class="coming-soon">
 
-  <!-- NAVIGATION -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">New Greek <span>Bakery</span></a>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="about.html">About</a>
-        <a href="find-us.html">Find Us</a>
-      </div>
-      <a href="menu.html" class="btn btn-primary btn-sm nav-cta">View Menu</a>
-      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Opening Soon Banner -->
+  <div class="opening-banner">
+    <span>Opening Soon</span> &middot; <strong>Jesmond, Newcastle</strong> &middot; <span>Coming 2026</span>
+  </div>
+
+  <!-- Minimal nav: just the logo, no links -->
+  <nav class="nav nav-minimal" role="navigation">
+    <div class="nav-inner" style="display:flex;align-items:center;justify-content:center;">
+      <img src="/images/icon-192.png" alt="" class="brand-mark-sm" aria-hidden="true">
+      <span class="nav-logo">New Greek Bakery</span>
     </div>
   </nav>
 
-  <div class="nav-mobile" role="menu">
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="about.html">About</a>
-    <a href="find-us.html">Find Us</a>
-  </div>
-
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg">
-      <div class="hero-bg-gradient"></div>
-    </div>
-    <div class="container hero-container">
-      <div class="hero-content">
-        <h1>Greek baking.<br><span class="accent">Jesmond's new morning.</span></h1>
-        <p>Authentic Greek pastries, freshly baked breads and proper Greek coffee. Made daily, from scratch, by the team behind New Greek.</p>
-        <div class="hero-actions">
-          <a href="menu.html" class="btn btn-primary">See the Menu</a>
-          <a href="about.html" class="btn btn-ghost">Our Story</a>
-        </div>
-        <div class="hero-mobile-info">
-          <div class="hmi-pill">
-            <span data-dot style="width:8px;height:8px;border-radius:50%;display:inline-block;"></span>
-            <span data-open-status>Open today</span>
-          </div>
-          <div class="hmi-pill">
-            <span>8 Clayton Road, Jesmond</span>
-          </div>
-        </div>
-      </div>
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <img src="/images/icon-512.png" alt="New Greek Bakery logo" class="brand-mark fade-in">
+      <span class="hero-badge fade-up">Opening Soon &middot; Jesmond</span>
+      <h1 class="slide-up">New Greek<br><em class="accent">Bakery</em></h1>
+      <p class="hero-sub fade-up">Authentic Greek pastries, freshly baked breads and proper Greek coffee. Coming soon to Jesmond, by the team behind New Greek.</p>
 
-      <div class="hero-float-card">
-        <div class="hero-float-badge">
-          <span class="dot" data-dot></span>
-          <span data-open-status>Open today</span>
-        </div>
-        <div class="hf-divider"></div>
-        <div class="hf-info">
-          <strong>8 Clayton Road</strong>
-          Jesmond, Newcastle<br>NE2 4RP
-        </div>
+      <!-- Email signup -->
+      <form class="hero-signup fade-up" id="signupForm">
+        <input type="email" name="email" placeholder="Your email address" required aria-label="Email">
+        <button type="submit" class="btn btn-blue btn-arrow">Notify Me</button>
+      </form>
+      <div class="hero-signup-success" id="signupSuccess">
+        Thanks. We will email you when we open the doors.
       </div>
+      <p class="hero-signup-note fade-up">Be the first to know when we open. No spam, just updates.</p>
+    </div>
+    <div class="hero-info fade-in">
+      <div class="hero-info-item"><strong>Opening Soon</strong></div>
+      <div class="hero-info-item">8 Clayton Road, Jesmond</div>
+      <div class="hero-info-item">Newcastle, NE2 4RP</div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
     </div>
   </section>
 
-  <!-- WHAT WE DO -->
-  <section class="section" aria-labelledby="highlights-heading">
+  <!-- TEXT REVEAL -->
+  <section class="text-reveal-section">
     <div class="container">
-      <span class="section-label">What we do</span>
-      <h2 id="highlights-heading">A proper Greek bakery.<br>The first in Newcastle.</h2>
-      <div class="divider"></div>
-
-      <div class="highlights-grid">
-        <article class="highlight-card card-terracotta">
-          <span class="highlight-icon">&#127854;</span>
-          <h3>Handmade Pastries</h3>
-          <p>Bougatsa, spanakopita, tiropita, baklava. Phyllo dough made by hand, filled the Greek way, baked fresh every morning.</p>
-        </article>
-        <article class="highlight-card card-honey">
-          <span class="highlight-icon">&#9749;</span>
-          <h3>Greek Coffee Culture</h3>
-          <p>Freddo espresso, freddo cappuccino, traditional Greek coffee brewed in a briki. The way Greece actually drinks coffee.</p>
-        </article>
-        <article class="highlight-card card-blue">
-          <span class="highlight-icon">&#127838;</span>
-          <h3>Freshly Baked Bread</h3>
-          <p>Koulouri, cheese bread, olive bread, rustic village-style loaves. Grab one on the way to work or take a loaf home.</p>
-        </article>
-        <article class="highlight-card card-blush">
-          <span class="highlight-icon">&#127849;</span>
-          <h3>Sweet Things</h3>
-          <p>Loukoumades drizzled with honey, portokalopita with citrus syrup, galaktoboureko. Desserts most people in Newcastle have never tried.</p>
-        </article>
-      </div>
+      <div class="v-line"></div>
+      <h2 class="text-reveal-heading" data-char-reveal>A proper Greek bakery in Jesmond. Handmade phyllo, proper Greek coffee, and recipes that go back generations.</h2>
     </div>
   </section>
 
-  <!-- ABOUT SNIPPET -->
-  <section class="section" style="background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <!-- STORY -->
+  <section class="split-section">
+    <div class="split-img">
+      <div class="split-img-inner" data-parallax="-20"></div>
+    </div>
+    <div class="split-text">
+      <span class="section-label fade-up">Our story</span>
+      <h2 class="fade-up">From the grill to the oven</h2>
+      <p class="fade-up">New Greek started on Chillingham Road in Heaton, serving authentic Greek street food. The gyros, the skewers, the homemade dishes. Newcastle took notice.</p>
+      <p class="fade-up">Now we are expanding into something new. A dedicated Greek bakery cafe in the heart of Jesmond. Same commitment to doing things properly. Same family. A completely different experience.</p>
+      <p class="fade-up">Expect bougatsa pulled fresh from the oven, baklava soaked in honey, golden spanakopita, sourdough breads, and proper freddo espresso. Greek ingredients. Recipes that go back generations.</p>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="menu-preview-section">
     <div class="container">
-      <div class="about-snippet">
-        <div class="about-snippet-img">
-          <div class="img-wrap" style="background: linear-gradient(135deg, var(--primary-dim), var(--honey-dim)); display:flex; align-items:center; justify-content:center;">
-            <span style="font-size: 4rem; opacity: 0.6;">&#127858;</span>
-          </div>
-        </div>
-        <div class="about-snippet-text">
-          <span class="section-label">Our story</span>
-          <h2>From the grill to the oven</h2>
-          <div class="divider"></div>
-          <p>New Greek started on Chillingham Road in Heaton, serving authentic Greek street food. The gyros, the skewers, the homemade dishes. Newcastle took notice.</p>
-          <p>Now we are expanding into something new. A dedicated Greek bakery cafe in the heart of Jesmond. Same commitment to doing things properly. Same family. A completely different experience.</p>
-          <p>Fresh pastries at dawn. Greek coffee all day. A place to sit, slow down and eat something real.</p>
-          <a href="about.html" class="btn btn-outline mt-16">Read More</a>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="v-line v-line-white"></div>
+      <span class="section-label section-label-white fade-up">What to expect</span>
+      <h2 class="fade-up">A taste of<br>what is coming</h2>
+      <p class="menu-preview-sub fade-up">Handmade every morning. Greek ingredients. Recipes that go back generations.</p>
 
-  <!-- FEATURED MENU PREVIEW -->
-  <section class="section" aria-labelledby="preview-heading">
-    <div class="container text-center">
-      <span class="section-label">From the bakery</span>
-      <h2 id="preview-heading">A taste of what is coming</h2>
-      <div class="divider divider-center"></div>
-      <p style="max-width:520px; margin: 16px auto 0;">Handmade every morning. Greek ingredients. Recipes that go back generations.</p>
-
-      <div class="highlights-grid" style="margin-top: 40px;">
-        <article class="highlight-card card-honey" style="text-align: left;">
-          <h3 style="color: var(--honey);">Bougatsa</h3>
+      <div class="menu-preview-grid">
+        <div class="menu-preview-card fade-up">
+          <h3>Bougatsa</h3>
           <p>Crisp phyllo filled with warm semolina custard, dusted with powdered sugar and cinnamon. The signature Greek bakery breakfast.</p>
-          <span class="menu-item-tag tag-popular">Signature</span>
-        </article>
-        <article class="highlight-card card-terracotta" style="text-align: left;">
-          <h3 style="color: var(--primary);">Freddo Espresso</h3>
+          <span class="menu-preview-tag">Signature</span>
+        </div>
+        <div class="menu-preview-card fade-up">
+          <h3>Freddo Espresso</h3>
           <p>Double espresso shaken over ice until frothy and cold. Greece's most popular coffee, and something you cannot get anywhere else in Newcastle.</p>
-          <span class="menu-item-tag tag-new">Must Try</span>
-        </article>
-        <article class="highlight-card card-sage" style="text-align: left;">
-          <h3 style="color: var(--sage);">Spanakopita</h3>
+          <span class="menu-preview-tag">Must Try</span>
+        </div>
+        <div class="menu-preview-card fade-up">
+          <h3>Spanakopita</h3>
           <p>Spinach and feta in handmade phyllo. Baked golden every morning. The savoury pastry that Greece runs on.</p>
-          <span class="menu-item-tag tag-popular">Classic</span>
-        </article>
-      </div>
-
-      <div class="mt-48">
-        <a href="menu.html" class="btn btn-dark">See the Full Menu</a>
+          <span class="menu-preview-tag">Classic</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
-  <section class="cta-banner">
-    <div class="cta-banner-bg"></div>
+  <!-- FIND US (inline, replaces the find-us page) -->
+  <section class="find-us-inline" id="find-us">
     <div class="container">
-      <span class="section-label">Jesmond</span>
-      <h2>8 Clayton Road</h2>
-      <p>In the heart of Jesmond. Open early, baking fresh, pouring Greek coffee from morning to evening.</p>
-      <a href="find-us.html" class="btn btn-primary">Find Us</a>
-    </div>
-  </section>
+      <span class="section-label fade-up">Find Us</span>
+      <h2 class="fade-up">8 Clayton Road,<br>Jesmond</h2>
+      <p class="find-us-intro fade-up">In the heart of Jesmond, just a few minutes from the Metro station. Open early, baking fresh, pouring Greek coffee from morning to evening.</p>
 
-  <!-- REVIEWS (placeholder) -->
-  <section class="section" aria-labelledby="reviews-heading">
-    <div class="container">
-      <span class="section-label">New Greek</span>
-      <h2 id="reviews-heading">What people say about us</h2>
-      <div class="divider"></div>
-
-      <div class="reviews-grid">
-        <article class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"The best Greek food I have had outside of Greece. Everything tastes fresh and homemade. Cannot wait for the bakery to open."</p>
-          <p class="review-author">New Greek Customer</p>
-        </article>
-        <article class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"Genuinely authentic. You can tell these people care about doing it the right way. A Greek bakery from them is going to be incredible."</p>
-          <p class="review-author">New Greek Customer</p>
-        </article>
-        <article class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"New Greek is already the best Greek in Newcastle. Bringing proper pastries and coffee to Jesmond? That is exactly what we need."</p>
-          <p class="review-author">New Greek Customer</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- DECORATIVE COLOUR BAR -->
-  <div class="color-block">
-    <span class="cb-terracotta"></span>
-    <span class="cb-honey"></span>
-    <span class="cb-blue"></span>
-    <span class="cb-blush"></span>
-    <span class="cb-sage"></span>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="font-size:1.3rem;">New Greek <span>Bakery</span></a>
-          <p>Authentic Greek bakery cafe in Jesmond, Newcastle. Fresh pastries, bread and coffee, every day.</p>
-          <div class="footer-social">
-            <a href="https://www.instagram.com/newgreek.ncl" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#ig-grad)" stroke-width="1.8"/>
-                <circle cx="12" cy="12" r="4.5" stroke="url(#ig-grad)" stroke-width="1.8"/>
-                <circle cx="17.2" cy="6.8" r="1.1" fill="url(#ig-grad)"/>
-                <defs>
-                  <linearGradient id="ig-grad" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#F58529"/>
-                    <stop offset="50%" stop-color="#DD2A7B"/>
-                    <stop offset="100%" stop-color="#8134AF"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </a>
-            <a href="https://www.facebook.com/newgreekncl" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color: rgba(255,255,255,0.7);">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </a>
+      <div class="find-us-grid">
+        <div class="find-us-info">
+          <div class="find-us-block">
+            <h4>Address</h4>
+            <p>8 Clayton Road<br>Jesmond, Newcastle upon Tyne<br>NE2 4RP</p>
+          </div>
+          <div class="find-us-block">
+            <h4>Hours when we open</h4>
+            <table class="hours-table">
+              <tr><td>Monday</td><td>7:00 - 18:00</td></tr>
+              <tr><td>Tuesday</td><td>7:00 - 18:00</td></tr>
+              <tr><td>Wednesday</td><td>7:00 - 18:00</td></tr>
+              <tr><td>Thursday</td><td>7:00 - 18:00</td></tr>
+              <tr><td>Friday</td><td>7:00 - 18:00</td></tr>
+              <tr><td>Saturday</td><td>7:00 - 18:00</td></tr>
+              <tr><td>Sunday</td><td>8:00 - 16:00</td></tr>
+            </table>
+          </div>
+          <div class="find-us-block">
+            <h4>Getting here</h4>
+            <p><strong>Metro:</strong> 5 minutes walk from Jesmond Metro station.</p>
+            <p><strong>Car:</strong> Street parking on Clayton Road and surrounding streets. Pay and display in Jesmond.</p>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Menu</h4>
-          <ul>
-            <li><a href="menu.html#pastries">Pastries</a></li>
-            <li><a href="menu.html#savoury">Savoury</a></li>
-            <li><a href="menu.html#breads">Breads</a></li>
-            <li><a href="menu.html#coffee">Coffee</a></li>
-            <li><a href="menu.html#sweets">Sweets</a></li>
-          </ul>
+        <div class="find-us-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.5!2d-1.6007!3d54.9878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487d857e3c3fbba5%3A0x0!2s8+Clayton+Road%2C+Jesmond%2C+Newcastle+upon+Tyne+NE2+4RP!5e0!3m2!1sen!2suk!4v1714380000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="New Greek Bakery location"></iframe>
         </div>
-        <div class="footer-col">
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="find-us.html">Find Us</a></li>
-            <li><a href="https://newgreek.co.uk" target="_blank" rel="noopener">New Greek Restaurant</a></li>
-          </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (minimal, no internal links) -->
+  <footer class="footer footer-minimal" role="contentinfo">
+    <div class="container">
+      <div class="footer-minimal-inner">
+        <div class="footer-brand">
+          <img src="/images/icon-192.png" alt="" style="width:64px;height:64px;border-radius:50%;display:block;margin-bottom:12px;" aria-hidden="true">
+          <span class="nav-logo">New Greek Bakery</span>
+          <p>Authentic Greek bakery cafe. Coming soon to Jesmond, Newcastle.</p>
         </div>
-        <div class="footer-col">
-          <h4>Visit</h4>
-          <ul>
-            <li><span>8 Clayton Road</span></li>
-            <li><span>Jesmond, Newcastle</span></li>
-            <li><span>NE2 4RP</span></li>
-            <li style="margin-top: 8px;"><span data-open-status>Mon-Sat 7:00-18:00</span></li>
-          </ul>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/newgreek.ncl" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/><circle cx="12" cy="12" r="4.5" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1.1" fill="rgba(255,255,255,0.55)"/></svg>
+          </a>
+          <a href="https://www.facebook.com/newgreekncl" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.55)"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 New Greek Bakery. All rights reserved.</p>
+        <p>&copy; 2026 New Greek Bakery</p>
         <p>8 Clayton Road, Jesmond, Newcastle upon Tyne, NE2 4RP</p>
-        <p style="margin-top: 12px;"><a href="https://fusioncreative.uk" target="_blank" rel="noopener" style="color: var(--honey-light); text-decoration: none; font-weight: 500;">Website powered by Fusion Creative</a></p>
+        <p style="margin-top: 12px;"><a href="https://fusioncreative.uk" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.35); font-weight: 500;">Fusion Creative</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js?v=9"></script>
 </body>
 </html>
