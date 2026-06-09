@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920">
+  <title>New Greek Bakery - Drinks</title>
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue: #0D47A1;
+      --gold: #C9A24E;
+      --gold-dark: #A78338;
+      --text: #111111;
+      --text-light: #666666;
+    }
+
+    body {
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background: #FFFFFF;
+      font-family: 'Inter', -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .screen {
+      width: 1920px;
+      height: 1080px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: var(--blue);
+      padding: 28px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .header-logo {
+      font-family: 'Noto Serif Display', Georgia, serif;
+      font-size: 32px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .header-category {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .header-page {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.1em;
+    }
+
+    .gold-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+      flex-shrink: 0;
+    }
+
+    .content {
+      flex: 1;
+      padding: 48px 60px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+    .section-sub {
+      font-size: 15px;
+      color: var(--text-light);
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+
+    .drinks-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0 60px;
+      flex: 1;
+    }
+
+    .drinks-col-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .item-name {
+      font-family: 'Noto Serif Display', Georgia, serif;
+      font-size: 21px;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    .item-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 2px;
+      font-weight: 400;
+    }
+    .item-dots {
+      flex: 1;
+      border-bottom: 1px dotted rgba(0,0,0,0.12);
+      margin: 0 12px;
+      min-width: 20px;
+      position: relative;
+      top: -4px;
+    }
+    .item-price {
+      font-family: 'Inter', sans-serif;
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    .footer {
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      flex-shrink: 0;
+    }
+    .footer-left {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .footer-right {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .footer-right strong {
+      color: var(--gold-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="screen">
+    <div class="header">
+      <span class="header-logo">New Greek Bakery</span>
+      <span class="header-category">Drinks</span>
+      <span class="header-page">4 / 4</span>
+    </div>
+    <div class="gold-bar"></div>
+
+    <div class="content">
+      <h2 class="section-title">Drinks</h2>
+      <p class="section-sub">Greek soft drinks, juices and refreshments.</p>
+
+      <div class="drinks-layout">
+        <!-- Column 1: Greek Drinks -->
+        <div>
+          <h3 class="drinks-col-title">Greek Drinks</h3>
+          <div class="menu-item">
+            <span class="item-name">Loux</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.20</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Bravo</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Amita Motion</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.80</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Amita Cherry</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Amita 1L</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;3.75</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Soft Drinks -->
+        <div>
+          <h3 class="drinks-col-title">Soft Drinks</h3>
+          <div class="menu-item">
+            <span class="item-name">Coca Cola</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Fanta</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Sprite</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Energy Drink</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;3.50</span>
+          </div>
+        </div>
+
+        <!-- Column 3: Water -->
+        <div>
+          <h3 class="drinks-col-title">Water</h3>
+          <div class="menu-item">
+            <span class="item-name">Water 500ml</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;1.20</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Water 1L</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;1.50</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="footer-left">8 Clayton Road, Jesmond, Newcastle &middot; NE2 4RP</span>
+      <span class="footer-right"><strong>@newgreek.ncl</strong></span>
+    </div>
+  </div>
+</body>
+</html>
