@@ -83,7 +83,7 @@
 
     .section-title {
       font-family: 'Noto Serif Display', Georgia, serif;
-      font-size: 42px;
+      font-size: 50px;
       font-weight: 400;
       color: var(--text);
       letter-spacing: -0.03em;
@@ -100,8 +100,14 @@
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
       gap: 0 80px;
       flex: 1;
+    }
+    .menu-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .menu-item {
@@ -117,7 +123,7 @@
 
     .item-name {
       font-family: 'Noto Serif Display', Georgia, serif;
-      font-size: 22px;
+      font-size: 26px;
       font-weight: 400;
       color: var(--text);
       letter-spacing: -0.01em;
@@ -132,7 +138,7 @@
     }
     .item-price {
       font-family: 'Inter', sans-serif;
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 600;
       color: var(--blue);
       white-space: nowrap;
@@ -186,10 +192,10 @@
 
     <div class="content">
       <h2 class="section-title">Pastries</h2>
-      <p class="section-sub">Traditional Greek savoury pastries, pies and rolls. Baked fresh daily.</p>
+      <p class="section-sub">Traditional Greek savoury pastries, pies and rolls. Fresh every day.</p>
 
       <div class="menu-grid">
-        <div>
+        <div class="menu-col">
           <div class="menu-item">
             <span class="item-name">Spinach Cheese Pie<span class="item-tag">Classic</span></span>
             <span class="item-dots"></span>
@@ -226,7 +232,7 @@
             <span class="item-price">&pound;3.20</span>
           </div>
         </div>
-        <div>
+        <div class="menu-col">
           <div class="menu-item">
             <span class="item-name">Pizza Special</span>
             <span class="item-dots"></span>
