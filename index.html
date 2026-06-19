@@ -63,13 +63,21 @@
     <span>Opening Tuesday 23 June</span> &middot; <strong>Jesmond, Newcastle</strong> &middot; <span>8 Clayton Road</span>
   </div>
 
-  <!-- Minimal nav: just the logo, no links -->
-  <nav class="nav nav-minimal" role="navigation">
-    <div class="nav-inner" style="display:flex;align-items:center;justify-content:center;">
-      <img src="/images/icon-192.png" alt="" class="brand-mark-sm" aria-hidden="true">
-      <span class="nav-logo">New Greek Bakery</span>
+  <!-- Primary nav -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">New Greek Bakery</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="find-us.html">Find Us</a>
+      </div>
+      <a href="find-us.html" class="btn btn-blue btn-sm nav-cta btn-arrow">Visit</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
+  <div class="nav-mobile" role="menu"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="about.html">About</a><a href="find-us.html">Find Us</a></div>
 
   <!-- HERO -->
   <section class="hero">
