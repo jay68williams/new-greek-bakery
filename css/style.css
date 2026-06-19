@@ -296,7 +296,9 @@ p {
   height: 100vh;
   min-height: 700px;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  padding-top: calc(40px + var(--nav-height) + 20px);
+  padding-bottom: 40px;
   overflow: hidden;
   background: var(--bg-dark);
 }
@@ -308,16 +310,16 @@ p {
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 0 48px 100px;
+  padding: 0 48px;
   max-width: var(--max-width);
   margin: 0 auto;
   width: 100%;
 }
 .hero h1 {
   color: var(--white);
-  font-size: clamp(4rem, 10vw, 9rem);
-  line-height: 0.9;
-  margin-bottom: 32px;
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  line-height: 0.92;
+  margin-bottom: 16px;
 }
 .hero h1 .accent {
   color: rgba(255,255,255,0.7);
@@ -327,8 +329,8 @@ p {
   color: rgba(255,255,255,0.4);
   font-size: 1.05rem;
   max-width: 440px;
-  line-height: 1.8;
-  margin-bottom: 40px;
+  line-height: 1.7;
+  margin-bottom: 16px;
 }
 .hero-actions {
   display: flex;
@@ -386,7 +388,7 @@ p {
 }
 
 @media (max-width: 768px) {
-  .hero-content { padding: 0 24px 80px; }
+  .hero-content { padding: 24px; }
   .hero-info { display: none; }
   .hero-scroll { display: none; }
 }
@@ -1084,14 +1086,14 @@ body.coming-soon .hero { min-height: calc(100vh - 40px); }
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
 
 /* Email signup form in hero */
 .hero-signup {
   display: flex;
   gap: 12px;
-  margin-top: 32px;
+  margin-top: 8px;
   margin-bottom: 12px;
   max-width: 500px;
   flex-wrap: wrap;
@@ -1189,8 +1191,8 @@ body.coming-soon .hero { min-height: calc(100vh - 40px); }
   display: none !important;
 }
 
-/* Hide any leftover nav-mobile if present */
-body.coming-soon .nav-mobile { display: none !important; }
+/* Homepage (coming-soon) has a real nav now: enable the mobile menu, offset below the banner + nav */
+body.coming-soon .nav-mobile { display: flex !important; top: calc(40px + var(--nav-height)); }
 
 /* Inline Find Us section */
 .find-us-inline {
@@ -1410,9 +1412,9 @@ body.coming-soon .nav-mobile { display: none !important; }
 /* Brand mark (logo image) */
 .brand-mark {
   display: block;
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 32px;
+  width: 80px;
+  height: 80px;
+  margin: 0 0 20px;
   border-radius: 50%;
   box-shadow: 0 4px 24px rgba(201,162,78,0.25), 0 0 0 1px rgba(201,162,78,0.15);
 }
