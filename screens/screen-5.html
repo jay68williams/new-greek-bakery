@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1920">
-  <title>New Greek Bakery - Sandwiches &amp; Paninis</title>
+  <title>New Greek Bakery - Sandwiches, Paninis & Pinsa</title>
   <link rel="icon" href="/favicon.ico">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
@@ -180,77 +180,135 @@
       color: var(--gold-dark);
     }
   
-    /* Deli photo grid */
-    .deli-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 30px; flex: 1; align-content: start; }
-    .deli-card { display: flex; flex-direction: column; }
-    .deli-card-img { width: 100%; height: 288px; object-fit: cover; object-position: center; border-radius: 12px; display: block; background: rgba(201,162,78,0.1); }
-    .deli-card-info { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; margin-top: 14px; }
-    .deli-card-name { font-family: 'Noto Serif Display', Georgia, serif; font-size: 26px; font-weight: 400; color: var(--text); letter-spacing: -0.01em; line-height: 1.15; }
-    .deli-card-price { font-family: 'Inter', sans-serif; font-size: 23px; font-weight: 600; color: var(--blue); white-space: nowrap; }
-    .deli-card-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); background: rgba(201,162,78,0.1); border: 1px solid rgba(201,162,78,0.25); padding: 3px 9px; border-radius: 3px; margin-left: 10px; vertical-align: middle; }
-    /* Pinsa screen: larger, centred, two-tier price */
-    .pinsa-grid { align-content: center; gap: 44px; }
-    .pinsa-grid .deli-card-img { height: 430px; }
-    .pinsa-grid .deli-card-info { flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 18px; }
-    .pinsa-grid .deli-card-name { font-size: 31px; }
-    .pinsa-grid .deli-card-price { font-size: 24px; }
+    /* Split layout: menu left, flicking photo panel right */
+    .content { flex-direction: row; gap: 54px; padding: 44px 60px 36px; }
+    .menu-left { flex: 1.55; display: flex; flex-direction: column; min-width: 0; }
+    .menu-right { flex: 1; position: relative; border-radius: 16px; overflow: hidden; background: rgba(201,162,78,0.08); box-shadow: 0 1px 0 rgba(0,0,0,0.04); }
+
+    .block-title { font-family: 'Noto Serif Display', Georgia, serif; font-size: 38px; font-weight: 400; color: var(--text); letter-spacing: -0.02em; }
+    .block-title .sub { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: var(--text-light); letter-spacing: 0; margin-left: 14px; }
+    .block-title.pinsa { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(0,0,0,0.08); }
+
+    .sand-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(6, auto); grid-auto-flow: column; column-gap: 52px; margin-top: 14px; }
+    .menu-item { padding: 11px 0; }
+    .item-name { font-size: 24px; }
+    .item-price { font-size: 22px; }
+    .pinsa-list { margin-top: 12px; }
+    .pinsa-list .item-price { font-size: 19px; font-weight: 600; }
+
+    /* Flicking slideshow */
+    .slideshow { position: absolute; inset: 0; }
+    .slideshow img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.1s ease-in-out; }
+    .slideshow img.active { opacity: 1; animation: kenburns 4.5s ease-out both; }
+    @keyframes kenburns { from { transform: scale(1.06); } to { transform: scale(1.0); } }
   </style>
 </head>
 <body>
   <div class="screen">
     <div class="header">
       <span class="header-logo">New Greek Bakery</span>
-      <span class="header-category">Sandwiches &amp; Paninis</span>
-      <span class="header-page">5 / 7</span>
+      <span class="header-category">Sandwiches &middot; Paninis &middot; Pinsa</span>
+      <span class="header-page">5 / 5</span>
     </div>
     <div class="gold-bar"></div>
 
     <div class="content">
-      <h2 class="section-title">Sandwiches &amp; Paninis</h2>
-      <p class="section-sub">Italian-style sandwiches on ciabatta, schiacciata, baguette &amp; bagel. Made to order.</p>
+      <div class="menu-left">
+        <h2 class="block-title">Sandwiches &amp; Paninis</h2>
+        <div class="sand-grid">
+          <div class="menu-item">
+            <span class="item-name">Diva Panini<span class="item-tag">Signature</span></span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;9.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Pesto, Burrata &amp; Mortadella</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;11.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Caprese</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;6.60</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Chicken Bruschetta</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;9.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">&rsquo;Nduja<span class="item-tag">Spicy</span></span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;10.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Salmon &amp; Rucola</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;9.90</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Prosciutto, Fig &amp; Rocket</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;8.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Prosciutto &amp; Rocket</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;7.90</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Greek Village Baguette</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;6.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Classic Omelette Baguette</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;6.90</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Ham &amp; Cheese Bagel</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;6.00</span>
+          </div>
+        </div>
 
-      <div class="deli-grid">
-        <div class="deli-card">
-          <img class="deli-card-img" src="/images/menu/diva-panini.jpg" alt="Diva Panini">
-          <div class="deli-card-info">
-            <span class="deli-card-name">Diva Panini<span class="deli-card-tag">Signature</span></span>
-            <span class="deli-card-price">&pound;9.00</span>
+        <h2 class="block-title pinsa">Pinsa <span class="sub">by the slice or whole</span></h2>
+        <div class="pinsa-list">
+          <div class="menu-item">
+            <span class="item-name">Pinsa Margherita</span>
+            <span class="item-dots"></span>
+            <span class="item-price">Slice &pound;5.90 &nbsp;&middot;&nbsp; Whole &pound;10.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Pinsa Rucola &amp; Burrata<span class="item-tag">Must Try</span></span>
+            <span class="item-dots"></span>
+            <span class="item-price">Slice &pound;7.50 &nbsp;&middot;&nbsp; Whole &pound;13.90</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Pinsa Verdura<span class="item-tag">Vegetarian</span></span>
+            <span class="item-dots"></span>
+            <span class="item-price">Slice &pound;6.50 &nbsp;&middot;&nbsp; Whole &pound;11.90</span>
           </div>
         </div>
-        <div class="deli-card">
-          <img class="deli-card-img" src="/images/menu/pesto-burrata-mortadella.jpg" alt="Pesto, Burrata &amp; Mortadella">
-          <div class="deli-card-info">
-            <span class="deli-card-name">Pesto, Burrata &amp; Mortadella</span>
-            <span class="deli-card-price">&pound;11.50</span>
-          </div>
-        </div>
-        <div class="deli-card">
-          <img class="deli-card-img" src="/images/menu/caprese.jpg" alt="Caprese">
-          <div class="deli-card-info">
-            <span class="deli-card-name">Caprese</span>
-            <span class="deli-card-price">&pound;6.60</span>
-          </div>
-        </div>
-        <div class="deli-card">
-          <img class="deli-card-img" src="/images/menu/chicken-bruschetta.jpg" alt="Chicken Bruschetta">
-          <div class="deli-card-info">
-            <span class="deli-card-name">Chicken Bruschetta</span>
-            <span class="deli-card-price">&pound;9.00</span>
-          </div>
-        </div>
-        <div class="deli-card">
-          <img class="deli-card-img" src="/images/menu/nduja.jpg" alt="&rsquo;Nduja">
-          <div class="deli-card-info">
-            <span class="deli-card-name">&rsquo;Nduja<span class="deli-card-tag">Spicy</span></span>
-            <span class="deli-card-price">&pound;10.50</span>
-          </div>
-        </div>
-        <div class="deli-card">
-          <img class="deli-card-img" src="/images/menu/salmon-rucola.jpg" alt="Salmon &amp; Rucola">
-          <div class="deli-card-info">
-            <span class="deli-card-name">Salmon &amp; Rucola</span>
-            <span class="deli-card-price">&pound;9.90</span>
-          </div>
+      </div>
+
+      <div class="menu-right">
+        <div class="slideshow">
+        <img class="active" src="/images/menu/diva-panini.jpg" alt="">
+        <img class="" src="/images/menu/pinsa-margherita.jpg" alt="">
+        <img class="" src="/images/menu/caprese.jpg" alt="">
+        <img class="" src="/images/menu/nduja.jpg" alt="">
+        <img class="" src="/images/menu/salmon-rucola.jpg" alt="">
+        <img class="" src="/images/menu/pinsa-verdura.jpg" alt="">
+        <img class="" src="/images/menu/chicken-bruschetta.jpg" alt="">
+        <img class="" src="/images/menu/pesto-burrata-mortadella.jpg" alt="">
+        <img class="" src="/images/menu/prosciutto-rocket-figs.jpg" alt="">
+        <img class="" src="/images/menu/pinsa-rucola-burrata.jpg" alt="">
+        <img class="" src="/images/menu/greek-village-baguette.jpg" alt="">
+        <img class="" src="/images/menu/omelette-baguette.jpg" alt="">
+        <img class="" src="/images/menu/prosciutto-rocket.jpg" alt="">
+        <img class="" src="/images/menu/ham-cheese-bagel.jpg" alt="">
         </div>
       </div>
     </div>
@@ -260,5 +318,10 @@
       <span class="footer-right"><strong>@newgreek.ncl</strong></span>
     </div>
   </div>
+
+  <script>
+  (function(){ var imgs=document.querySelectorAll('.slideshow img'); if(imgs.length<2) return; var i=0;
+    setInterval(function(){ imgs[i].classList.remove('active'); i=(i+1)%imgs.length; imgs[i].classList.add('active'); }, 3500); })();
+  </script>
 </body>
 </html>
