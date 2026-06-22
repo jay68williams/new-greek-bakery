@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1920">
-  <title>New Greek Bakery - Pastries</title>
+  <title>New Greek Bakery - Pinsa</title>
   <link rel="icon" href="/favicon.ico">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
@@ -179,94 +179,56 @@
     .footer-right strong {
       color: var(--gold-dark);
     }
+  
+    /* Deli photo grid */
+    .deli-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 30px; flex: 1; align-content: start; }
+    .deli-card { display: flex; flex-direction: column; }
+    .deli-card-img { width: 100%; height: 288px; object-fit: cover; object-position: center; border-radius: 12px; display: block; background: rgba(201,162,78,0.1); }
+    .deli-card-info { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; margin-top: 14px; }
+    .deli-card-name { font-family: 'Noto Serif Display', Georgia, serif; font-size: 26px; font-weight: 400; color: var(--text); letter-spacing: -0.01em; line-height: 1.15; }
+    .deli-card-price { font-family: 'Inter', sans-serif; font-size: 23px; font-weight: 600; color: var(--blue); white-space: nowrap; }
+    .deli-card-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); background: rgba(201,162,78,0.1); border: 1px solid rgba(201,162,78,0.25); padding: 3px 9px; border-radius: 3px; margin-left: 10px; vertical-align: middle; }
+    /* Pinsa screen: larger, centred, two-tier price */
+    .pinsa-grid { align-content: center; gap: 44px; }
+    .pinsa-grid .deli-card-img { height: 430px; }
+    .pinsa-grid .deli-card-info { flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 18px; }
+    .pinsa-grid .deli-card-name { font-size: 31px; }
+    .pinsa-grid .deli-card-price { font-size: 24px; }
   </style>
 </head>
 <body>
   <div class="screen">
     <div class="header">
       <span class="header-logo">New Greek Bakery</span>
-      <span class="header-category">Pastries</span>
-      <span class="header-page">1 / 7</span>
+      <span class="header-category">Pinsa</span>
+      <span class="header-page">7 / 7</span>
     </div>
     <div class="gold-bar"></div>
 
     <div class="content">
-      <h2 class="section-title">Pastries</h2>
-      <p class="section-sub">Traditional Greek savoury pastries, pies and rolls. Fresh every day.</p>
+      <h2 class="section-title">Pinsa</h2>
+      <p class="section-sub">Light, airy Roman flatbreads. Available by the slice or whole.</p>
 
-      <div class="menu-grid">
-        <div class="menu-col">
-          <div class="menu-item">
-            <span class="item-name">Spinach Cheese Pie<span class="item-tag">Classic</span></span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.85</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Cheese Pie</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.85</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Santorini Pie</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.85</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Chicken Pie</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;4.00</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Koulouri Philadelphia</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.45</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Ham and Cheese Pie</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.85</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Potato Roll</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.20</span>
+      <div class="deli-grid pinsa-grid">
+        <div class="deli-card">
+          <img class="deli-card-img" src="/images/menu/pinsa-margherita.jpg" alt="Pinsa Margherita">
+          <div class="deli-card-info">
+            <span class="deli-card-name">Pinsa Margherita</span>
+            <span class="deli-card-price">Slice &pound;5.90 &nbsp;&middot;&nbsp; Whole &pound;10.00</span>
           </div>
         </div>
-        <div class="menu-col">
-          <div class="menu-item">
-            <span class="item-name">Pizza Special</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.90</span>
+        <div class="deli-card">
+          <img class="deli-card-img" src="/images/menu/pinsa-rucola-burrata.jpg" alt="Pinsa Rucola &amp; Burrata">
+          <div class="deli-card-info">
+            <span class="deli-card-name">Pinsa Rucola &amp; Burrata<span class="deli-card-tag">Must Try</span></span>
+            <span class="deli-card-price">Slice &pound;7.50 &nbsp;&middot;&nbsp; Whole &pound;13.90</span>
           </div>
-          <div class="menu-item">
-            <span class="item-name">Croissant Butter</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;2.80</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Penerli<span class="item-tag">Must Try</span></span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.90</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Koulouri</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;2.10</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Croissant Ham and Cheese</span>
-            <span class="item-dots"></span>
-            <span class="item-price"></span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Double Sausage Roll</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.90</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Mushroom Pie</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.85</span>
+        </div>
+        <div class="deli-card">
+          <img class="deli-card-img" src="/images/menu/pinsa-verdura.jpg" alt="Pinsa Verdura">
+          <div class="deli-card-info">
+            <span class="deli-card-name">Pinsa Verdura<span class="deli-card-tag">Vegetarian</span></span>
+            <span class="deli-card-price">Slice &pound;6.50 &nbsp;&middot;&nbsp; Whole &pound;11.90</span>
           </div>
         </div>
       </div>

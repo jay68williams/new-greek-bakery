@@ -1527,3 +1527,5 @@ body.coming-soon .nav-mobile { display: flex !important; top: calc(40px + var(--
 .home-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
 .home-gallery-item:hover img { transform: scale(1.05); }
 @media (max-width: 768px) { .home-gallery { padding: 72px 0; } .home-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } .home-gallery-head { margin-bottom: 32px; } }
+
+.dish-card-price { font-family: var(--font-body); font-size: 0.98rem; font-weight: 700; color: var(--blue); letter-spacing: 0.01em; }
