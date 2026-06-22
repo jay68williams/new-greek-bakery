@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Greek Bakery — Menu Display</title>
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    html, body { margin: 0; height: 100%; background: #0D47A1; overflow: hidden; }
+    .frame {
+      position: fixed; inset: 0;
+      width: 100vw; height: 100vh;
+      border: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      pointer-events: none;
+    }
+    .frame.active { opacity: 1; }
+  </style>
+</head>
+<body>
+  <!-- Auto-rotating in-store display: cycles all four menu boards. Point the screen's browser here in full-screen / kiosk mode. -->
+  <iframe class="frame active" src="/screens/screen-1" title="Pastries"></iframe>
+  <iframe class="frame" src="/screens/screen-2" title="Sweet Pastries &amp; Desserts"></iframe>
+  <iframe class="frame" src="/screens/screen-3" title="Coffee &amp; Drinks"></iframe>
+  <iframe class="frame" src="/screens/screen-4" title="Sandwiches, Paninis &amp; Pinsa"></iframe>
+  <script>
+  (function () {
+    var frames = document.querySelectorAll('.frame');
+    var i = 0;
+    var SECONDS_PER_BOARD = 18;
+    setInterval(function () {
+      frames[i].classList.remove('active');
+      i = (i + 1) % frames.length;
+      frames[i].classList.add('active');
+    }, SECONDS_PER_BOARD * 1000);
+  })();
+  </script>
+</body>
+</html>
