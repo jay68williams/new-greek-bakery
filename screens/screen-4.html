@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1920">
-  <title>New Greek Bakery - Drinks</title>
+  <title>New Greek Bakery - Sandwiches, Paninis & Pinsa</title>
   <link rel="icon" href="/favicon.ico">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
@@ -34,6 +34,7 @@
       flex-direction: column;
     }
 
+    /* Header */
     .header {
       background: var(--blue);
       padding: 28px 60px;
@@ -65,18 +66,19 @@
       letter-spacing: 0.1em;
     }
 
+    /* Gold accent bar */
     .gold-bar {
       height: 3px;
       background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
       flex-shrink: 0;
     }
 
+    /* Content */
     .content {
       flex: 1;
-      padding: 48px 60px 32px;
+      padding: 48px 60px 40px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
     }
 
     .section-title {
@@ -85,7 +87,7 @@
       font-weight: 400;
       color: var(--text);
       letter-spacing: -0.03em;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .section-sub {
       font-size: 15px;
@@ -94,63 +96,70 @@
       font-weight: 400;
     }
 
-    .drinks-layout {
+    /* Menu grid - 2 columns */
+    .menu-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0 60px;
-      margin-top: 16px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 0 80px;
+      flex: 1;
     }
-
-    .drinks-col-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      margin-bottom: 24px;
-      padding-bottom: 14px;
-      border-bottom: 2px solid var(--gold);
+    .menu-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .menu-item {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 18px 0;
+      padding: 14px 0;
       border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .menu-item:last-child {
+      border-bottom: none;
     }
 
     .item-name {
       font-family: 'Noto Serif Display', Georgia, serif;
-      font-size: 27px;
+      font-size: 26px;
       font-weight: 400;
       color: var(--text);
       letter-spacing: -0.01em;
     }
-    .item-desc {
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      color: var(--text-light);
-      margin-top: 2px;
-      font-weight: 400;
-    }
     .item-dots {
       flex: 1;
       border-bottom: 1px dotted rgba(0,0,0,0.12);
-      margin: 0 12px;
-      min-width: 20px;
+      margin: 0 16px;
+      min-width: 40px;
       position: relative;
       top: -4px;
     }
     .item-price {
       font-family: 'Inter', sans-serif;
-      font-size: 25px;
+      font-size: 24px;
       font-weight: 600;
       color: var(--blue);
       white-space: nowrap;
     }
 
+    .item-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      background: rgba(201,162,78,0.1);
+      border: 1px solid rgba(201,162,78,0.25);
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-left: 12px;
+      vertical-align: middle;
+    }
+
+    /* Footer */
     .footer {
       padding: 20px 60px;
       display: flex;
@@ -170,90 +179,136 @@
     .footer-right strong {
       color: var(--gold-dark);
     }
+  
+    /* Split layout: menu left, flicking photo panel right */
+    .content { flex-direction: row; gap: 54px; padding: 44px 60px 36px; }
+    .menu-left { flex: 1.55; display: flex; flex-direction: column; min-width: 0; }
+    .menu-right { flex: 1; position: relative; border-radius: 16px; overflow: hidden; background: rgba(201,162,78,0.08); box-shadow: 0 1px 0 rgba(0,0,0,0.04); }
+
+    .block-title { font-family: 'Noto Serif Display', Georgia, serif; font-size: 38px; font-weight: 400; color: var(--text); letter-spacing: -0.02em; }
+    .block-title .sub { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: var(--text-light); letter-spacing: 0; margin-left: 14px; }
+    .block-title.pinsa { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(0,0,0,0.08); }
+
+    .sand-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(6, auto); grid-auto-flow: column; column-gap: 52px; margin-top: 14px; }
+    .menu-item { padding: 11px 0; }
+    .item-name { font-size: 24px; }
+    .item-price { font-size: 22px; }
+    .pinsa-list { margin-top: 12px; }
+    .pinsa-list .item-price { font-size: 19px; font-weight: 600; }
+
+    /* Flicking slideshow */
+    .slideshow { position: absolute; inset: 0; }
+    .slideshow img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.1s ease-in-out; }
+    .slideshow img.active { opacity: 1; animation: kenburns 4.5s ease-out both; }
+    @keyframes kenburns { from { transform: scale(1.06); } to { transform: scale(1.0); } }
   </style>
 </head>
 <body>
   <div class="screen">
     <div class="header">
       <span class="header-logo">New Greek Bakery</span>
-      <span class="header-category">Drinks</span>
-      <span class="header-page">4 / 5</span>
+      <span class="header-category">Sandwiches &middot; Paninis &middot; Pinsa</span>
+      <span class="header-page">4 / 4</span>
     </div>
     <div class="gold-bar"></div>
 
     <div class="content">
-      <h2 class="section-title">Drinks</h2>
-      <p class="section-sub">Greek soft drinks, juices and refreshments.</p>
-
-      <div class="drinks-layout">
-        <!-- Column 1: Greek Drinks -->
-        <div>
-          <h3 class="drinks-col-title">Greek Drinks</h3>
+      <div class="menu-left">
+        <h2 class="block-title">Sandwiches &amp; Paninis</h2>
+        <div class="sand-grid">
           <div class="menu-item">
-            <span class="item-name">Loux</span>
+            <span class="item-name">Diva Panini<span class="item-tag">Signature</span></span>
             <span class="item-dots"></span>
-            <span class="item-price">&pound;2.20</span>
+            <span class="item-price">&pound;9.00</span>
           </div>
           <div class="menu-item">
-            <span class="item-name">Bravo</span>
+            <span class="item-name">Pesto, Burrata &amp; Mortadella</span>
             <span class="item-dots"></span>
-            <span class="item-price">&pound;2.50</span>
+            <span class="item-price">&pound;11.50</span>
           </div>
           <div class="menu-item">
-            <span class="item-name">Amita Motion</span>
+            <span class="item-name">Caprese</span>
             <span class="item-dots"></span>
-            <span class="item-price">&pound;2.80</span>
+            <span class="item-price">&pound;6.60</span>
           </div>
           <div class="menu-item">
-            <span class="item-name">Amita Cherry</span>
+            <span class="item-name">Chicken Bruschetta</span>
             <span class="item-dots"></span>
-            <span class="item-price">&pound;2.50</span>
+            <span class="item-price">&pound;9.00</span>
           </div>
           <div class="menu-item">
-            <span class="item-name">Amita 1L</span>
+            <span class="item-name">&rsquo;Nduja<span class="item-tag">Spicy</span></span>
             <span class="item-dots"></span>
-            <span class="item-price">&pound;3.75</span>
+            <span class="item-price">&pound;10.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Salmon &amp; Rucola</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;9.90</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Prosciutto, Fig &amp; Rocket</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;8.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Prosciutto &amp; Rocket</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;7.90</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Greek Village Baguette</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;6.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Classic Omelette Baguette</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;6.90</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Ham &amp; Cheese Bagel</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;6.00</span>
           </div>
         </div>
 
-        <!-- Column 2: Soft Drinks -->
-        <div>
-          <h3 class="drinks-col-title">Soft Drinks</h3>
+        <h2 class="block-title pinsa">Pinsa <span class="sub">by the slice or whole</span></h2>
+        <div class="pinsa-list">
           <div class="menu-item">
-            <span class="item-name">Coca Cola</span>
+            <span class="item-name">Pinsa Margherita</span>
             <span class="item-dots"></span>
-            <span class="item-price">&pound;2.00</span>
+            <span class="item-price">Slice &pound;5.90 &nbsp;&middot;&nbsp; Whole &pound;10.00</span>
           </div>
           <div class="menu-item">
-            <span class="item-name">Fanta</span>
+            <span class="item-name">Pinsa Rucola &amp; Burrata<span class="item-tag">Must Try</span></span>
             <span class="item-dots"></span>
-            <span class="item-price">&pound;2.00</span>
+            <span class="item-price">Slice &pound;7.50 &nbsp;&middot;&nbsp; Whole &pound;13.90</span>
           </div>
           <div class="menu-item">
-            <span class="item-name">Sprite</span>
+            <span class="item-name">Pinsa Verdura<span class="item-tag">Vegetarian</span></span>
             <span class="item-dots"></span>
-            <span class="item-price">&pound;2.00</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Energy Drink</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;3.50</span>
+            <span class="item-price">Slice &pound;6.50 &nbsp;&middot;&nbsp; Whole &pound;11.90</span>
           </div>
         </div>
+      </div>
 
-        <!-- Column 3: Water -->
-        <div>
-          <h3 class="drinks-col-title">Water</h3>
-          <div class="menu-item">
-            <span class="item-name">Water 500ml</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;1.20</span>
-          </div>
-          <div class="menu-item">
-            <span class="item-name">Water 1L</span>
-            <span class="item-dots"></span>
-            <span class="item-price">&pound;1.50</span>
-          </div>
+      <div class="menu-right">
+        <div class="slideshow">
+        <img class="active" src="/images/menu/diva-panini.jpg" alt="">
+        <img class="" src="/images/menu/pinsa-margherita.jpg" alt="">
+        <img class="" src="/images/menu/caprese.jpg" alt="">
+        <img class="" src="/images/menu/nduja.jpg" alt="">
+        <img class="" src="/images/menu/salmon-rucola.jpg" alt="">
+        <img class="" src="/images/menu/pinsa-verdura.jpg" alt="">
+        <img class="" src="/images/menu/chicken-bruschetta.jpg" alt="">
+        <img class="" src="/images/menu/pesto-burrata-mortadella.jpg" alt="">
+        <img class="" src="/images/menu/prosciutto-rocket-figs.jpg" alt="">
+        <img class="" src="/images/menu/pinsa-rucola-burrata.jpg" alt="">
+        <img class="" src="/images/menu/greek-village-baguette.jpg" alt="">
+        <img class="" src="/images/menu/omelette-baguette.jpg" alt="">
+        <img class="" src="/images/menu/prosciutto-rocket.jpg" alt="">
+        <img class="" src="/images/menu/ham-cheese-bagel.jpg" alt="">
         </div>
       </div>
     </div>
@@ -263,5 +318,10 @@
       <span class="footer-right"><strong>@newgreek.ncl</strong></span>
     </div>
   </div>
+
+  <script>
+  (function(){ var imgs=document.querySelectorAll('.slideshow img'); if(imgs.length<2) return; var i=0;
+    setInterval(function(){ imgs[i].classList.remove('active'); i=(i+1)%imgs.length; imgs[i].classList.add('active'); }, 3500); })();
+  </script>
 </body>
 </html>

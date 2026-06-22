@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1920">
-  <title>New Greek Bakery - Coffee</title>
+  <title>New Greek Bakery - Coffee & Drinks</title>
   <link rel="icon" href="/favicon.ico">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
@@ -34,6 +34,7 @@
       flex-direction: column;
     }
 
+    /* Header */
     .header {
       background: var(--blue);
       padding: 28px 60px;
@@ -65,15 +66,17 @@
       letter-spacing: 0.1em;
     }
 
+    /* Gold accent bar */
     .gold-bar {
       height: 3px;
       background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
       flex-shrink: 0;
     }
 
+    /* Content */
     .content {
       flex: 1;
-      padding: 48px 60px 32px;
+      padding: 48px 60px 40px;
       display: flex;
       flex-direction: column;
     }
@@ -84,48 +87,46 @@
       font-weight: 400;
       color: var(--text);
       letter-spacing: -0.03em;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .section-sub {
       font-size: 15px;
       color: var(--text-light);
-      margin-bottom: 40px;
+      margin-bottom: 36px;
       font-weight: 400;
     }
 
+    /* Menu grid - 2 columns */
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
       gap: 0 80px;
       flex: 1;
-      align-content: center;
+    }
+    .menu-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .menu-item {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 24px 0;
+      padding: 14px 0;
       border-bottom: 1px solid rgba(0,0,0,0.06);
     }
-
-    .item-left {
-      display: flex;
-      flex-direction: column;
+    .menu-item:last-child {
+      border-bottom: none;
     }
+
     .item-name {
       font-family: 'Noto Serif Display', Georgia, serif;
-      font-size: 27px;
+      font-size: 26px;
       font-weight: 400;
       color: var(--text);
       letter-spacing: -0.01em;
-    }
-    .item-desc {
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      color: var(--text-light);
-      margin-top: 4px;
-      font-weight: 400;
     }
     .item-dots {
       flex: 1;
@@ -137,7 +138,7 @@
     }
     .item-price {
       font-family: 'Inter', sans-serif;
-      font-size: 25px;
+      font-size: 24px;
       font-weight: 600;
       color: var(--blue);
       white-space: nowrap;
@@ -158,6 +159,7 @@
       vertical-align: middle;
     }
 
+    /* Footer */
     .footer {
       padding: 20px 60px;
       display: flex;
@@ -177,23 +179,40 @@
     .footer-right strong {
       color: var(--gold-dark);
     }
+  
+    /* Cross-fading Coffee / Drinks panels */
+    .content { padding: 0; position: relative; }
+    .panel { position: absolute; inset: 0; padding: 46px 60px 38px; display: flex; flex-direction: column; opacity: 0; transition: opacity 0.9s ease; pointer-events: none; }
+    .panel.active { opacity: 1; }
+    .title-row { display: flex; align-items: center; gap: 16px; margin-bottom: 6px; }
+    .title-row .section-title { margin-bottom: 0; }
+    .dicon { width: 34px; height: 34px; color: var(--gold-dark); flex-shrink: 0; }
+    .menu-grid { gap: 0 80px; }
+    /* Drinks 3-column layout */
+    .drinks-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 64px; flex: 1; align-content: start; margin-top: 6px; }
+    .drinks-col-title { font-family: 'Noto Serif Display', Georgia, serif; font-size: 27px; font-weight: 400; color: var(--text); letter-spacing: -0.01em; margin-bottom: 10px; display: flex; align-items: center; gap: 11px; }
+    .drinks-col-title .dicon { width: 26px; height: 26px; }
+    /* Sub-page dots */
+    .page-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 9px; z-index: 5; }
+    .page-dots span { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.14); transition: background 0.4s ease; }
+    .page-dots span.on { background: var(--gold-dark); }
   </style>
 </head>
 <body>
   <div class="screen">
     <div class="header">
       <span class="header-logo">New Greek Bakery</span>
-      <span class="header-category">Coffee</span>
-      <span class="header-page">3 / 5</span>
+      <span class="header-category">Coffee &amp; Drinks</span>
+      <span class="header-page">3 / 4</span>
     </div>
     <div class="gold-bar"></div>
 
     <div class="content">
-      <h2 class="section-title">Coffee</h2>
-      <p class="section-sub">Greece has one of the strongest coffee cultures in Europe. This is how they actually drink it.</p>
-
-      <div class="menu-grid">
-        <div>
+      <div class="panel active" data-panel>
+        <div class="title-row"><svg class="dicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h13.5V14a4.5 4.5 0 0 1-4.5 4.5H8.5A4.5 4.5 0 0 1 4 14V9.5Z"/><path d="M17.5 10.5H19a2.3 2.3 0 0 1 0 4.6h-1.5"/><path d="M7.5 3.5c-.6 1 .6 1.8 0 2.8M11.5 3.5c-.6 1 .6 1.8 0 2.8"/></svg><h2 class="section-title">Coffee</h2></div>
+        <p class="section-sub">Greece has one of the strongest coffee cultures in Europe. This is how they actually drink it.</p>
+        <div class="menu-grid">
+          <div>
           <div class="menu-item">
             <span class="item-name">Fredo Espresso<span class="item-tag">Must Try</span></span>
             <span class="item-dots"></span>
@@ -224,8 +243,8 @@
             <span class="item-dots"></span>
             <span class="item-price">&pound;3.00</span>
           </div>
-        </div>
-        <div>
+          </div>
+          <div>
           <div class="menu-item">
             <span class="item-name">Cappuccino</span>
             <span class="item-dots"></span>
@@ -251,8 +270,80 @@
             <span class="item-dots"></span>
             <span class="item-price">&pound;3.30</span>
           </div>
+          </div>
         </div>
       </div>
+      <div class="panel" data-panel>
+        <h2 class="section-title">Drinks</h2>
+        <p class="section-sub">Greek soft drinks, juices and refreshments.</p>
+        <div class="drinks-layout">
+          <div>
+            <h3 class="drinks-col-title"><svg class="dicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12l-1.1 14.2a2 2 0 0 1-2 1.8H9.1a2 2 0 0 1-2-1.8L6 4Z"/><path d="M6.5 9.5h11"/></svg>Greek Drinks</h3>
+          <div class="menu-item">
+            <span class="item-name">Loux</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.20</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Bravo</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Amita Motion</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.80</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Amita Cherry</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.50</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Amita 1L</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;3.75</span>
+          </div>
+          </div>
+          <div>
+            <h3 class="drinks-col-title"><svg class="dicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="2.2"/><path d="M7.4 8h9.2"/></svg>Soft Drinks</h3>
+          <div class="menu-item">
+            <span class="item-name">Coca Cola</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Fanta</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Sprite</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;2.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Energy Drink</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;3.50</span>
+          </div>
+          </div>
+          <div>
+            <h3 class="drinks-col-title"><svg class="dicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5h4v1.8l1.2 2.4V19a1.8 1.8 0 0 1-1.8 1.8h-2.8A1.8 1.8 0 0 1 8.8 19V7.7L10 5.3V3.5Z"/><path d="M8.8 11h6.4"/></svg>Water</h3>
+          <div class="menu-item">
+            <span class="item-name">Water 500ml</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;1.20</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-name">Water 1L</span>
+            <span class="item-dots"></span>
+            <span class="item-price">&pound;1.50</span>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-dots"><span class="on"></span><span></span></div>
     </div>
 
     <div class="footer">
@@ -260,5 +351,10 @@
       <span class="footer-right"><strong>@newgreek.ncl</strong></span>
     </div>
   </div>
+
+  <script>
+  (function(){ var panels=document.querySelectorAll('[data-panel]'); var dots=document.querySelectorAll('.page-dots span'); var i=0;
+    setInterval(function(){ panels[i].classList.remove('active'); dots[i].classList.remove('on'); i=(i+1)%panels.length; panels[i].classList.add('active'); dots[i].classList.add('on'); }, 5000); })();
+  </script>
 </body>
 </html>
